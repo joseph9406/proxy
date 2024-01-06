@@ -1,0 +1,10 @@
+#!/usr/bin/ruby
+
+# $LOAD_PATH 是一个全局变量，它包含了 Ruby 解释器用于查找所需文件的目录路径。
+# unshift 是数组（Array）的一个方法，用于在原始数组的开头插入一个或多个元素,並返回原數組
+# __dir__ 返回的是当前文件的目录的绝对路径。
+# Dir[...] 返回一个包含这两个目录絶對路径的数组, '*'操作符将数组展开为参数列表。
+$LOAD_PATH.unshift(*Dir[File.expand_path('../lib', __dir__), File.expand_path('../modules', __dir__)])
+
+require 'smart_proxy_main'
+#Proxy::Launcher.new.launch
